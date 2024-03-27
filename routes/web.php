@@ -3,6 +3,7 @@
 use App\Http\Controllers\AnotherController;
 use App\Http\Controllers\mycontroller;
 use App\Http\Controllers\PhotoContoller;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\SingleActionController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +17,7 @@ Route::get('/about', function () {
 
 Route::get('/contact', SingleActionController::class);
 Route::resource('photo', PhotoContoller::class);
+
+// form route
+Route::get('/register', [RegistrationController::class, 'index']);
+Route::post('/register', [ RegistrationController::class,'register' ]);
